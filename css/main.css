@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+:root {
+  --Moderateviolet: hsl(263, 55%, 52%);
+  --Verydarkgrayishblue: hsl(217, 19%, 35%);
+  --Verydarkblackishblue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Lightgray: hsl(0, 0%, 81%);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+  --primary: 'Barlow Semi Condensed';
+  --fw-500: 500;
+  --fw-600: 600;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary) !important;
+  background-color: var(--Lightgrayishblue) !important;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+}
+
+main .testimonial-card {
+  width: 80%;
+  border-radius: 10px;
+  margin-inline: auto;
+  margin-block: 1.5em;
+  padding: 1em 2em;
+  -webkit-box-shadow: 0 5px 10px 5px rgba(128, 128, 128, 0.447);
+          box-shadow: 0 5px 10px 5px rgba(128, 128, 128, 0.447);
+}
+
+main .testimonial-card img {
+  border-radius: 50%;
+  border: 2px solid gray;
+  width: 2em;
+}
+
+main .testimonial-card .name {
+  margin-left: 1em;
+}
+
+main .testimonial-card .name h2 {
+  font-size: .9em;
+  color: var(--Lightgray);
+}
+
+main .testimonial-card .name p {
+  margin-top: -10px;
+  color: var(--Lightgray);
+  opacity: 0.7;
+  font-size: .8em;
+}
+
+main .testimonial-card blockquote p:first-of-type {
+  color: var(--White);
+  font-size: 1.45em;
+  line-height: 1.2;
+}
+
+main .testimonial-card blockquote p:last-of-type {
+  color: var(--Lightgray);
+  opacity: 0.7;
+}
+
+main .testimonial-card:nth-child(1) {
+  background-color: var(--Moderateviolet);
+}
+
+main .testimonial-card:nth-child(2) {
+  background-color: var(--Verydarkgrayishblue);
+}
+
+main .testimonial-card:nth-child(3), main :nth-child(5) {
+  background-color: var(--White);
+}
+
+main .testimonial-card:nth-child(3) img, main :nth-child(5) img {
+  border: none;
+}
+
+main .testimonial-card:nth-child(3) .name h2, main :nth-child(5) .name h2 {
+  color: var(--Verydarkgrayishblue);
+}
+
+main .testimonial-card:nth-child(3) .name p, main :nth-child(5) .name p {
+  opacity: 0.4;
+  color: var(--Verydarkblackishblue);
+}
+
+main .testimonial-card:nth-child(3) blockquote p:first-of-type, main :nth-child(5) blockquote p:first-of-type {
+  color: var(--Verydarkgrayishblue);
+  line-height: 1.2;
+}
+
+main .testimonial-card:nth-child(3) blockquote p:last-of-type, main :nth-child(5) blockquote p:last-of-type {
+  color: var(--Verydarkgrayishblue);
+  opacity: .6;
+}
+
+main .testimonial-card:nth-child(4) {
+  background-color: var(--Verydarkblackishblue);
+}
+
+main .testimonial-card:nth-child(4) img {
+  border-color: var(--Moderateviolet);
+}
+
+main .quote {
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+
+@media (min-width: 992px) {
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: -ms-grid;
+    display: grid;
+    gap: 2em;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'one one two five' 'three four four five';
+  }
+  main .testimonial-card:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: one;
+  }
+  main .testimonial-card:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: two;
+  }
+  main .testimonial-card:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: three;
+  }
+  main .testimonial-card:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: four;
+  }
+  main .testimonial-card:nth-child(5) {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 4;
+    grid-area: five;
+  }
+  main .testimonial-card {
+    margin-block: 0;
+    width: 100%;
+  }
+  main .span {
+    grid-column: span 2;
+  }
+  main .testimonial-card:last-child {
+    -ms-grid-column: 4;
+        grid-column-start: 4;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  main .quote {
+    background-position: top right 20%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
